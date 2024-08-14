@@ -29,7 +29,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: java-app
-          path: '${{ github.workspace }}/target/app.war'
+          path: '${{ github.workspace }}/target/*.war'
 
   deploy:
     runs-on: windows-latest
@@ -49,9 +49,9 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_CD301AF16D6D4E88AAAF8488DA378B53 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_EC5A49868EE14298AE3A7BDBFAE429E9 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_C717163F9BD14B679694EC89C24F54B5 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_7939035ACACD4C859061FD10B7A2F9B3 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_FB174E5CC1624DF9BF74CEC39A0EE67F }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_78B78A9095C641DAA384CE2C79A7546E }}
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
